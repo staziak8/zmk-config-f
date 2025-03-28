@@ -14,6 +14,8 @@
 #define CMD    2
 #define SYM    3
 #define SSYM   4
+#define SSYM   5
+
 
 / {
     /* Definición de capas condicionales */
@@ -25,6 +27,39 @@
         };
     };
 
+  macros {
+        caps_toggle_macro: caps_toggle_macro {
+            label = "TOGGLE_CAPS_IF_SYM_AND_SHIFT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                // Verifica si la capa SYM está activa
+                &if_layer_active SYM
+                // Verifica si Shift está presionado
+                &if_pressed LSFT RSFT
+                // Si ambas condiciones se cumplen, alterna Caps Lock
+                &then &tog CAPSLOCK
+            >;
+        };
+    };
+
+
+
+ macros {
+        nump_toggle_macro: nump_toggle_macro {
+            label = "TOGGLE_NUMP_IF_SECOND_AND_SHIFT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                // Verifica si la capa SECOND está activa
+                &if_layer_active SECOND
+                // Verifica si Shift está presionado
+                &if_pressed LSFT RSFT
+                // Si ambas condiciones se cumplen, alterna la capa NUMP
+                &then &tog_layer NUMP
+            >;
+        };
+    };
 
 
 
@@ -35,15 +70,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  5  |  4  |  3   |  2   |  1   |                   |BTCLR | BT1   | BT2   |  BT3 |  BT4  |  BT5    |
 // |  CTRL |  P  |  W  |  R   |  A   |  F   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  ENT  |  D  |  T  |  H   |  E   |  O   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LALT  |  Y  |  S  |  N   |  I   |  U   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+// |  RALT |  D  |  T  |  H   |  E   |  O   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | RET   |  Y  |  S  |  N   |  I   |  U   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
 &kp ESC   &kp N5 &kp N4 &kp N3   &kp N2   &kp N1                     &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 
 &kp LCTRL &kp P  &kp W  &kp R    &kp A    &kp F                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RET   &kp D  &kp T  &kp H    &kp E    &kp O                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LALT  &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE  &kp RET  &mo 2  &kp BSPC &kp RGUI
+&kp RALT  &kp D  &kp T  &kp H    &kp E    &kp O                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE  &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -53,15 +88,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  0  |  9  |  8   |  7   |  6   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  LCTRL|  J  |  M  |  B   |  '   |  TAB |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  ENT  |  V  |  C  |  L   |  Z   |  Q   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LALT  |  X  |  G  |  K   |      |      |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+// |  RALT |  V  |  C  |  L   |  Z   |  Q   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | RET   |  X  |  G  |  K   |  LWIN| RWIN |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
 &kp ESC   &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RET   &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LALT  &kp X  &kp G  &kp K    &trans	  &trans        &kp LSHFT  &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND    &kp SPACE  &kp RET  &mo 2  &kp BSPC &kp RGUI
+&kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI    &kp LSHFT    &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE    &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -71,15 +106,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  | F5  |  F4 |  F3  |  F2  |  F1  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  LCTRL| PGUP|PAUSE|  END | HOME |  ESC |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  ENT  | PGDN| C_UP| RALT | RCTRL|  INS |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LALT  |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+// |  RALT | PGDN| C_UP| LATL | RCTRL|  INS |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | RET   |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                                  &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RET   &kp PG_DN  &kp UP           &kp RALT  &kp RCTRL &kp INS                                  &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LALT  &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL  &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND               &kp SPACE               &kp RET  &mo 2  &kp BSPC &kp RGUI
+&kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                                    &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                                   &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp RALT  &kp PG_DN  &kp UP           &kp LATL  &kp RCTRL &kp INS                                   &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL  &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND               &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -89,15 +124,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  | F10 |  F9 |  F8  |  F7  |  F6  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  LCTRL|  ;  |  :  |  *   |  &   |  ?   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  ENT  |  _  |  @  |  -   |  !   |  /   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LALT  |  {  |  [  |  (   |   <  |  "   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+// |  RALT |  _  |  @  |  -   |  !   |  /   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | RET   |  {  |  [  |  (   |   <  |  "   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7   &kp F6                                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS &kp QMARK                                  &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RET   &kp UNDER  &kp AT     &kp MINUS &kp EXCL &kp SLASH                                  &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LALT  &kp LBRC   &kp LBKT   &kp LPAR  &kp LT   &kp DQT    &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                      &mo SYM  &mo CMD  &mo SECOND            &kp SPACE               &kp RET  &mo 2  &kp BSPC &kp RGUI
+&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7   &kp F6                                      &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp LCTRL &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS &kp QMARK                                   &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp RALT  &kp UNDER  &kp AT     &kp MINUS &kp EXCL &kp SLASH                                   &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT   &kp DQT    &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                      &mo SYM  &mo CMD  &mo SECOND            &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -107,21 +142,37 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  | F10 |  F9 |  F8  |  F7  |  F6  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  LCTRL|  #  |  $  |  =   |  +   |  TAB |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  ENT  |  ^  |TILDE|  |   |  %   |  \   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | LALT  |  }  |  ]  |  )   |   >  |  `   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+// |  RALT  |  ^  |TILDE|  |   |  %   |  \   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | RET  |  }  |  ]  |  )   |   >  |  `   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                  &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RET   &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                                  &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LALT  &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND           &kp SPACE               &kp RET  &mo 2  &kp BSPC &kp RGUI
+&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                      &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                     &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp RALT  &kp CARALT  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                                    &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND           &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			
 			
-			 
+nump_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |     |  /  |  *   |  -   |      |                   |BTCLR | BT1   | BT2   |  BT3 |  BT4  |  BT5    |
+// |  CTRL |  7  |  8  |  9   |  +   |      |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
+// |  RALT |  4  |  5  |  6   |  RET |      |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// |  RET  |  1  |  2  |  3   |  RET |      |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
+            bindings = <
+&kp ESC   &trans  &kp SLASH &kp ASTRK &kp PLUS &trans                    &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 
+&kp LCTRL &kp N7  &kp N8    &kp N9    &kp A    &trans                    &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp RALT  &kp N4  &kp N5    &kp N6    &kp E    &trans                     &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp N1  &kp N2    &kp N3    &kp I    &trans       &kp LSHFT  &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE  &kp RALT  &mo 2  &kp BSPC &kp RGUI
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };			 
 			
 			
 			
