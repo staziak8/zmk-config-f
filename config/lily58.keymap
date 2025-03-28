@@ -25,11 +25,10 @@
             if-layers = <SECOND SYM>;
             then-layer = <SSYM>;
         };
-		
-	    numlock_layer {
-        if-numlock-on = <true>,
-        then-layer = <NUMP>;
-		};
+        numlock_layer {
+            if-numlock-on = <true>;
+            then-layer = <NUMP>;
+        };
     };
 
 	//CMD +  SENC
