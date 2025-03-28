@@ -41,11 +41,7 @@
                 &then &tog CAPSLOCK
             >;
         };
-    };
-
-
-
- macros {
+ 
         nump_toggle_macro: nump_toggle_macro {
             label = "TOGGLE_NUMP_IF_SECOND_AND_SHIFT";
             compatible = "zmk,behavior-macro";
