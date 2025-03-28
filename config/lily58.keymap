@@ -27,7 +27,7 @@
         };
 		
 	    numlock_layer {
-        if-numlock-on = <true>;
+        if-numlock-on = <true>,
         then-layer = <NUMP>;
 		};
     };
