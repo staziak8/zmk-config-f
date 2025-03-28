@@ -38,15 +38,12 @@
         };
 		
 		
-        nump_toggle_macro: nump_toggle_macro {
-            label = "TOGGLE_NUMP_IF_SECOND_AND_SHIFT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                // Verifica si la capa SECOND está activa
-                &if_pressed LSFT RSFT
-                // Si ambas condiciones se cumplen, alterna la capa NUMP
-                &then &tog_layer NUMP
+       nump_toggle_macro: nump_toggle_macro {
+        label = "TOGGLE_NUMP";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &tog_layer NUMP
             >;
         };
     };
