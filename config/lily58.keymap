@@ -34,9 +34,7 @@
             #binding-cells = <0>;
             bindings = <
                 // Verifica si la capa SYM está activa
-                &if_layer_active SYM
-                // Verifica si Shift está presionado
-                &if_pressed LSFT RSFT
+                 &if_pressed LSFT RSFT
                 // Si ambas condiciones se cumplen, alterna Caps Lock
                 &then &tog CAPSLOCK
             >;
@@ -48,8 +46,6 @@
             #binding-cells = <0>;
             bindings = <
                 // Verifica si la capa SECOND está activa
-                &if_layer_active SECOND
-                // Verifica si Shift está presionado
                 &if_pressed LSFT RSFT
                 // Si ambas condiciones se cumplen, alterna la capa NUMP
                 &then &tog_layer NUMP
@@ -74,7 +70,7 @@
 &kp LCTRL &kp P  &kp W  &kp R    &kp A    &kp F                                                       &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp RALT  &kp D  &kp T  &kp H    &kp E    &kp O                                                       &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp RET   &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp RBKT                             &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND &caps_toggle_macro &nump_toggle_macro &kp SPACE  &kp RALT  &mo 2  &kp BSPC &kp RGUI
+                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE  &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -91,8 +87,8 @@
 &kp ESC   &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI    &kp LSHFT    &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND  &kp SPACE    &kp RALT  &mo 2  &kp BSPC &kp RGUI
+&kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI                       &kp LSHFT    &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &mo SYM  &mo CMD  &mo SECOND  &nump_toggle_macro &kp SPACE    &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -128,7 +124,7 @@
 &kp LCTRL &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS &kp QMARK                                   &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp RALT  &kp UNDER  &kp AT     &kp MINUS &kp EXCL &kp SLASH                                   &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp RET   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT   &kp DQT    &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                      &mo SYM  &mo CMD  &mo SECOND            &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
+                      &mo SYM  &mo CMD  &mo SECOND &caps_toggle_macro           &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
