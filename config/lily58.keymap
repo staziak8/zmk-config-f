@@ -20,7 +20,7 @@
 
     /* Definición de comportamientos personalizados */
     behaviors {
-        tri_layer_ssym: tri_layer_ssym {
+         tog_on: tri_layer_ssym {
             compatible = "zmk,behavior-toggle-layer";
             label = "TRI_LAYER_SSYP";
             #binding-cells = <0>;
@@ -31,7 +31,6 @@
             ];
         };
     };
-
 
 
 
