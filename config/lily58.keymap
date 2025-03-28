@@ -70,10 +70,10 @@
 // | RET   |  Y  |  S  |  N   |  I   |  U   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &kp N5 &kp N4 &kp N3   &kp N2   &kp N1                     &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 
-&kp LCTRL &kp P  &kp W  &kp R    &kp A    &kp F                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RALT  &kp D  &kp T  &kp H    &kp E    &kp O                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp RET   &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+&kp ESC   &kp N5 &kp N4 &kp N3   &kp N2   &kp N1                                                      &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 
+&kp LCTRL &kp P  &kp W  &kp R    &kp A    &kp F                                                       &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp RALT  &kp D  &kp T  &kp H    &kp E    &kp O                                                       &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RET   &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp RBKT                             &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &mo SYM  &mo CMD  &mo SECOND &caps_toggle_macro &nump_toggle_macro &kp SPACE  &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
@@ -102,13 +102,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  | F5  |  F4 |  F3  |  F2  |  F1  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  LCTRL| PGUP|PAUSE|  END | HOME |  ESC |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  RALT | PGDN| C_UP| LATL | RCTRL|  INS |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// |  RALT | PGDN| C_UP| LALT | RCTRL|  INS |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | RET   |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
 &kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                                    &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                                   &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RALT  &kp PG_DN  &kp UP           &kp LATL  &kp RCTRL &kp INS                                   &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp RALT  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                                   &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL  &kp LSHFT               &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &mo SYM  &mo CMD  &mo SECOND               &kp SPACE               &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
