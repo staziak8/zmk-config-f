@@ -14,7 +14,7 @@
 #define CMD    2
 #define SYM    3
 #define SSYM   4
-#define SSYM   5
+#define NUMP   5
 
 
 / {
