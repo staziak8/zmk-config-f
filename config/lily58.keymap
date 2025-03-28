@@ -37,7 +37,7 @@
             >;
         };
 		
-		
+		// second y 
        nump_toggle_macro: nump_toggle_macro {
         label = "TOGGLE_NUMP";
         compatible = "zmk,behavior-macro";
@@ -83,7 +83,7 @@
 &kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI                       &kp LSHFT    &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND  &nump_toggle_macro &kp SPACE    &kp RALT  &mo 2  &kp BSPC &kp RGUI
+                        &mo SYM  &mo CMD  &mo SECOND  &mt LSHFT TOG_LAYER_NUMP &kp SPACE    &kp RALT  &mo 2  &kp BSPC &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
