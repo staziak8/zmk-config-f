@@ -16,19 +16,12 @@
 #define SSYM   4
 
 / {
-
-
-    /* Definición de comportamientos personalizados */
-    behaviors {
-         tog_on: tri_layer_ssym {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "TRI_LAYER_SSYP";
-            #binding-cells = <0>;
-            layer = <SSYM>;
-            conditions = [
-                // Activar SSYM si SECOND y SYM están activas
-                (1 << SECOND) | (1 << SYM)
-            ];
+    /* Definición de capas condicionales */
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SECOND SYM>;
+            then-layer = <SSYM>;
         };
     };
 
