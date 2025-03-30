@@ -40,7 +40,7 @@
         compatible = "zmk,combos";
 
         WIN+E {
-            bindings = <&none>;
+            bindings = <&kp LG(E)>;
             key-positions = <35 56 31>;
         };
     };
