@@ -56,7 +56,7 @@
 // | RET   |  Y  |  S  |  N   |  I   |  U   |  SHIFT |  | SHIFT |  U   |  I    |  N    |  S   |   Y   | RET   |
 //                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM   | SIM   |
             bindings = <
-&kp ESC   &kp N5 &kp N4 &kp N3   &kp N2   &kp N1                           &kp N1      &kp N2   &kp N3    &kp N4  &bt N5   &KP ESC
+&kp ESC   &kp N5 &kp N4 &kp N3   &kp N2   &kp N1                           &kp N1      &kp N2   &kp N3    &kp N4  &kp N5   &kp ESC
 &kp LCTRL &kp P  &kp W  &kp R    &kp A    &kp F                            &kp F       &kp A    &kp R     &kp W   &kp P    &kp LCTRL
 &kp RALT  &kp D  &kp T  &kp H    &kp E    &kp O                            &kp O       &kp E    &kp H     &kp T   &kp D    &kp RALT
 &kp RET   &kp Y  &kp S  &kp N    &kp I    &kp U       &kp LSHFT  &kp LSHFT &kp U       &kp I    &kp N     &kp S   &kp Y    &kp RET
