@@ -122,17 +122,17 @@
 
         ssym_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  | F10 |  F9 |  F8  |  F7  |  F6  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-// |  LCTRL|  #  |  $  |  =   |  +   |  TAB |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  RALT |  ^  |TILDE|  |   |  %   |  \   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | RET   |  }  |  ]  |  )   |   >  |  `   |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI  |
+// |  ESC  | F10 |  F9 |  F8  |  F7  |  F6  |                   |  F6  |  F7   |  F8   |  F9  |   F10 |  ESC  |
+// |  LCTRL|  #  |  $  |  =   |  +   |  TAB |                   |  TAB |  +    |  =    |  $   |   #   |LCTRL  |
+// |  RALT |  ^  |TILDE|  |   |  %   |  \   |                   |  \   |  %    |  |    |TILDE |   ^   | RALT  |
+// | RET   |  }  |  ]  |  )   |   >  |  `   |  SHIFT |  |  SHIFT|  `   |  >    |  )    |  ]   |   }   | RET   |
+//                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM   | SIM   |
             bindings = <
-&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                               &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                              &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT         &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp RALT &mo 2  &kp BSPC &kp RGUI
+&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp ESC
+&kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                &kp TAB    &kp PLUS  &kp EQUAL &kp DLLR  &kp HASH  &kp LCTRL
+&kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                               &kp BSLH   &kp PRCNT &kp PIPE  &kp TILDE &kp CARET &kp RALT
+&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
+                                &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp SPACE &mo SECOND &mo CMD   &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -146,11 +146,11 @@ nump_layer {
 // |  RET  |  1  |  2  |  3   |  RET |      |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &trans  &kp SLASH &kp ASTRK &kp PLUS &tog NUMP                     &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3 &bt BT_SEL 4 
-&kp LCTRL &kp N7  &kp N8    &kp N9    &kp A    &trans                        &kp Y      &kp U          &kp I          &kp O          &kp P        &kp MINUS
-&kp RALT  &kp N4  &kp N5    &kp N6    &kp E    &trans                        &kp H      &kp J          &kp K          &kp L          &kp SEMI     &kp SQT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp I    &trans    &kp LSHFT  &kp RBKT &kp N      &kp M          &kp COMMA      &kp DOT        &kp FSLH     &kp RSHFT
-                            &mo SYM   &mo CMD  &tog NUMP &kp SPACE  &kp RALT &mo 2      &kp BSPC       &kp RGUI
+&kp ESC   &trans  &kp SLASH &kp ASTRK &kp MINUS &tog NUMP                      &tog NUMP  &kp MINUS      &kp ASTRK      &kp SLASH  &trans       &kp ESC 
+&kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS  &trans                         &trans     &kp PLUS       &kp N9         &kp N8     &kp N7       &kp LCTRL
+&kp RALT  &kp N4  &kp N5    &kp N6    &kp RET   &trans                         &trans     &kp RET        &kp N6         &kp N5     &kp N4       &kp RALT
+&kp RET   &kp N1  &kp N2    &kp N3    &kp RET   &trans    &kp LSHFT  &kp LSHFT &trans     &kp RET        &kp N3         &kp N2     &kp N1       &kp RET
+                            &mo SYM   &mo CMD   &tog NUMP &kp SPACE  &kp SPACE &tog NUMP  &mo CMD        &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
