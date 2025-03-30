@@ -51,7 +51,7 @@
 		
 		WIN+LL_esc {
             layers = <CMD>
-            key-positions = <35 56 31>;
+            key-positions = <24 28 51>;
               bindings = <&kp LG(E)>;
         };
 		
