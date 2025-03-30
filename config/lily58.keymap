@@ -25,11 +25,10 @@
         tri_layer {
             if-layers = <SECOND SYM>;
             then-layer = <SSYM>;
-        };
+			
+		};
 		
-	  conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
+        tri_layer2 {
             if-layers = <SECOND SYM CMD>;
             then-layer = <BLUET>;
         };
