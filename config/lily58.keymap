@@ -37,28 +37,28 @@
     };
     combos {
         compatible = "zmk,combos";
-        WIN+EL {
+        WIN_EL {
             layers = <CMD>;
             key-positions = <24 28 51>;
-              bindings = <&kp LG(E)>;
+              bindings = <&kp LGUI>, <&kp E>;;
         };
 		
-		WIN+ER_esc {
+		WIN_ER {
             layers = <CMD>;
             key-positions = <35 56 31>;
-              bindings = <&kp LG(E)>;
+              bindings = <&kp LGUI>, <&kp E>;;
         };
 		
-		WIN+LL_esc {
+		WIN_LL {
             layers = <CMD>;
             key-positions = <24 27 51>;
-              bindings = <&kp LG(E)>;
+              bindings = <&kp LGUI>, <&kp E>;
         };
 		
-		WIN+RL_esc {
+		WIN_RL {
             layers = <CMD>;
             key-positions = <35 56 32>;
-              bindings = <&kp LG(E)>;
+              bindings = <&kp LGUI>, <&kp E>;;
         };
     };
 	
