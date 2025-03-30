@@ -15,6 +15,8 @@
 #define SYM    3
 #define SSYM   4
 #define NUMP   5
+#define BLUET  6
+
 
 / {
     /* Definición de capas condicionales */
@@ -24,6 +26,15 @@
             if-layers = <SECOND SYM>;
             then-layer = <SSYM>;
         };
+		
+	  conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SECOND SYM CMD>;
+            then-layer = <BLUET>;
+        };
+		
+		
     };
 
 	//CMD +  SENC
@@ -58,17 +69,17 @@
 
         second_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  |  0  |  9  |  8   |  7   |  6   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-// |  LCTRL|  J  |  M  |  B   |  '   |  TAB |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  RALT |  V  |  C  |  L   |  Z   |  Q   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | RET   |  X  |  G  |  K   |  LWIN| RWIN |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
+// |  ESC  |  0  |  9  |  8   |  7   |  6   |                   |  6   |  7    |  8    |  9   |   0   |  ESC  |
+// |  LCTRL|  J  |  M  |  B   |  '   |  TAB |                   |  TAB |  '    |  B    |  M   |   J   | LCTRL |
+// |  RALT |  V  |  C  |  L   |  Z   |  Q   |                   |  Q   |  Z    |  L    |  C   |   V   | RALT  |
+// | RET   |  X  |  G  |  K   |  LWIN| RWIN |  SHIFT |  | SHIFT | RWIN |  LWIN |  K    |  G   |   X   | RET   |
+//                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM   | SIM   |
             bindings = <
-&kp ESC   &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                           &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                          &kp Y   &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                            &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI   &kp LSHFT    &kp RBKT &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp RALT &mo 2   &kp BSPC &kp RGUI
+&kp ESC   &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6     &kp N7   &kp N8  &kp N9  &kp N0 &kp ESC
+&kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp TAB    &kp SQT  &kp B   &kp M   &kp J  &kp LCTRL
+&kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp RALT
+&kp RET   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI   &kp LSHFT    &kp LSHFT &kp RGUI   &kp LGUI &kp K   &kp G   &kp X  &kp RET
+                        &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp SPACE &mo SECOND &mo CMD  &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -76,17 +87,17 @@
 
         cmd_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  | F5  |  F4 |  F3  |  F2  |  F1  |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-// |  LCTRL| PGUP|PAUSE|  END | HOME |  ESC |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  RALT | PGDN| C_UP| LALT | RCTRL|  INS |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | RET   |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
+// |  ESC  | F5  |  F4 |  F3  |  F2  |  F1  |                   |  F1    |  F2    |  F3  |  F4 | F5   | ESC   |
+// |  LCTRL| PGUP|PAUSE|  END | HOME |  ESC |                   |  ESC   |  HOME  |  END |PAUSE| PGUP | LCTRL |
+// |  RALT | PGDN| C_UP| LALT | RCTRL|  INS |                   |  INS   |  RCTRL |  LALT|C_UP | PGDN | RALT  |
+// | RET   |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  | SHIFT |  DEL   |  BACKSP|  C_LT|C_DN | C_RT | RET   |
+//                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON  | NUM    | SIM  |
             bindings = <
-&kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                               &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                              &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp RALT  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                              &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL   &kp LSHFT         &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                      &mo SYM   &mo CMD   &tog NUMP &kp SPACE         &kp RALT &mo 2  &kp BSPC &kp RGUI
+&kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                                &kp F1    &kp F2     &kp F3    &kp F4           &kp F5    &kp ESC
+&kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                               &kp ESC   &kp HOME   &kp END   &kp PAUSE_BREAK  &kp PG_UP &kp LCTRL
+&kp RALT  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                               &kp INS   &kp RCTRL  &kp LALT  &kp UP           &kp PG_DN &kp RALT
+&kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL   &kp LSHFT         &kp LSHFT &kp DEL   &kp BSPC   &kp RIGHT &kp DOWN         &kp LEFT  &kp RET
+                                      &mo SYM   &mo CMD   &tog NUMP &kp SPACE         &kp SPACE &tog NUMP &mo CMD    &kp SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -146,5 +157,27 @@ nump_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
    			
         };
+		
+		
+		        bluetooth_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |BTCLR  | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |BTCLR | BT1   | BT2   |  BT3 |  BT4  |  BT5  |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
+//                     | SIM  | NUM  | SECON|  BLUET |  | BLUET | SECON| NUM   | SIM   |
+            bindings = <
+  &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
+  &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
+  &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
+  &trans     &trans         &trans       &trans        &trans       &trans       &trans          &trans     &trans     &trans       &trans       &trans       &trans       &trans
+                                         &mo SYM       &mo CMD      &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+		
+		
+		
     };
 };
