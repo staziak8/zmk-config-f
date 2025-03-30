@@ -40,25 +40,25 @@
         WIN_EL {
             layers = <CMD>;
             key-positions = <24 28 51>;
-              bindings = <&kp LGUI>, <&kp E>;
+              bindings = <&kp LGUI &kp E>;
         };
 		
 		WIN_ER {
             layers = <CMD>;
             key-positions = <35 56 31>;
-              bindings = <&kp LGUI>, <&kp E>;
+              bindings = <&kp LGUI &kp E>;
         };
 		
 		WIN_LL {
             layers = <CMD>;
             key-positions = <24 27 51>;
-              bindings = <&kp LGUI>, <&kp E>;
+              bindings = <&kp LGUI &kp L>;
         };
 		
 		WIN_RL {
             layers = <CMD>;
             key-positions = <35 56 32>;
-              bindings = <&kp LGUI>, <&kp E>;
+              bindings = <&kp LGUI &kp L>;
         };
     };
 	
