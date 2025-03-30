@@ -30,7 +30,7 @@
 		
         tri_layer2 {
             if-layers = <SECOND SYM CMD>;
-            then-layer = <BLUET>;
+            then-layer = <NUMP>;
         };
 		
 		
@@ -74,10 +74,10 @@
 // | RET   |  X  |  G  |  K   |  LWIN| RWIN |  SHIFT |  | SHIFT | RWIN |  LWIN |  K    |  G   |   X   | RET   |
 //                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM   | SIM   |
             bindings = <
-&kp ESC   &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6     &kp N7   &kp N8  &kp N9  &kp N0 &kp ESC
-&kp LCTRL &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp TAB    &kp SQT  &kp B   &kp M   &kp J  &kp LCTRL
-&kp RALT  &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp RALT
-&kp DOT   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI   &kp LSHFT    &kp LSHFT &kp RGUI   &kp LGUI &kp K   &kp G   &kp X  &kp DOT
+&kp ESC      &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6     &kp N7   &kp N8  &kp N9  &kp N0 &kp ESC
+&kp LCTRL    &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp TAB    &kp SQT  &kp B   &kp M   &kp J  &kp LCTRL
+&kp RALT     &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp RALT
+&kp KP_DOT   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI   &kp LSHFT    &kp LSHFT &kp RGUI   &kp LGUI &kp K   &kp G   &kp X  &kp KP_DOT
                         &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp SPACE &mo SECOND &mo CMD  &mo SYM
             >;
 
@@ -110,10 +110,10 @@
 // | RET   |  {  |  [  |  (   |   <  |  "   |  SHIFT |  | SHIFT |  "   |  <    |  (    |  [   |   {   | RET   |
 //                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM  | SIM    |
             bindings = <
-&kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp ESC
-&kp LCTRL &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS  &kp QMARK                              &kp QMARK &kp AMPS &kp ASTRK &kp COLON &kp SEMI  &kp LCTRL
-&kp RALT  &kp UNDER  &kp AT     &kp MINUS &kp EXCL  &kp SLASH                              &kp SLASH &kp EXCL &kp MINUS &kp AT    &kp UNDER &kp RALT
-&kp RET   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT    &kp DQT    &kp LSHFT         &kp LSHFT &kp DQT   &kp LT   &kp LPAR  &kp LBKT  &kp LBRC  &kp RET
+&kp ESC      &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp ESC
+&kp LCTRL    &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS  &kp QMARK                              &kp QMARK &kp AMPS &kp ASTRK &kp COLON &kp SEMI  &kp LCTRL
+&kp COMMA    &kp UNDER  &kp AT     &kp MINUS &kp EXCL  &kp SLASH                              &kp SLASH &kp EXCL &kp MINUS &kp AT    &kp UNDER &kp COMMA
+&kp KP_DOT   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT    &kp DQT    &kp LSHFT         &kp LSHFT &kp DQT   &kp LT   &kp LPAR  &kp LBKT  &kp LBRC  &kp KP_DOT
                                 &mo SYM   &mo CMD   &kp CAPS   &kp SPACE         &kp SPACE &kp CAPS  &mo CMD  &mo SYM
             >;
 
@@ -146,11 +146,11 @@ nump_layer {
 // |  RET  |  1  |  2  |  3   |  RET |      |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC   &trans  &kp SLASH &kp ASTRK &kp MINUS &tog NUMP                      &trans   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUMP  &kp ESC 
-&kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS  &trans                         &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
-&kp RALT  &kp N4  &kp N5    &kp N6    &kp RET   &trans                         &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp RET   &trans    &kp LSHFT  &kp LSHFT &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
-                            &kp N0    &kp DOT   &tog NUMP &kp SPACE  &kp SPACE &kp N0   &kp DOT &tog NUMP
+&kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog NUMP                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUMP  &kp ESC 
+&kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
+&kp RALT  &kp N4  &kp N5    &kp N6    &kp RET      &trans                          &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
+&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans    &tog BLUET &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
+                            &kp N0    &kp KP_DOT   &tog NUMP &kp SPACE  &kp SPACE  &kp N0   &kp KP_DOT &tog NUMP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -169,8 +169,8 @@ nump_layer {
   &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
   &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
   &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
-  &to QWERTY &trans         &trans       &trans        &trans       &trans       &trans          &trans     &trans     &trans       &trans       &trans       &trans       &to QWERTY
-                                         &mo SYM       &mo CMD      &mo SECOND   &to BLUET      &to BLUET &mo SECOND &mo CMD      &mo SYM
+  &to QWERTY &trans         &trans       &trans        &trans       &trans       &tog BLUET      &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
+                                         &mo SYM       &mo CMD      &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
