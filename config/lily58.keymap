@@ -38,25 +38,25 @@
     combos {
         compatible = "zmk,combos";
         WIN+EL {
-            layers = <CMD>
+            layers = <CMD>;
             key-positions = <24 28 51>;
               bindings = <&kp LG(E)>;
         };
 		
 		WIN+ER_esc {
-            layers = <CMD>
+            layers = <CMD>;
             key-positions = <35 56 31>;
               bindings = <&kp LG(E)>;
         };
 		
 		WIN+LL_esc {
-            layers = <CMD>
+            layers = <CMD>;
             key-positions = <24 27 51>;
               bindings = <&kp LG(E)>;
         };
 		
 		WIN+RL_esc {
-            layers = <CMD>
+            layers = <CMD>;
             key-positions = <35 56 32>;
               bindings = <&kp LG(E)>;
         };
