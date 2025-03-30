@@ -58,7 +58,7 @@
 		WIN_RL {
             layers = <CMD>;
             key-positions = <35 32>;
-              bindings = <&kp LG(L);
+              bindings = <&kp LG(L)>;
         };
     };
 	
