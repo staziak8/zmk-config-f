@@ -149,7 +149,7 @@ nump_layer {
 &kp ESC   &trans  &kp SLASH &kp ASTRK &kp MINUS &tog NUMP                      &trans   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUMP  &kp ESC 
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS  &trans                         &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp RALT  &kp N4  &kp N5    &kp N6    &kp RET   &trans                         &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp RET   &trans    &kp LSHFT  &kp LSHFT &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET........
+&kp RET   &kp N1  &kp N2    &kp N3    &kp RET   &trans    &kp LSHFT  &kp LSHFT &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
                             &kp N0    &kp DOT   &tog NUMP &kp SPACE  &kp SPACE &kp N0   &kp DOT &tog NUMP
             >;
 
