@@ -41,7 +41,7 @@
 
         WIN+E {
             bindings = <&none>;
-            key-positions = <24 28 51>;
+            key-positions = <35 56 31>;
         };
     };
 
