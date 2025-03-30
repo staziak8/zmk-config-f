@@ -48,6 +48,18 @@
             key-positions = <35 56 31>;
               bindings = <&kp LG(E)>;
         };
+		
+		WIN+LL_esc {
+            layers = <CMD>
+            key-positions = <35 56 31>;
+              bindings = <&kp LG(E)>;
+        };
+		
+		WIN+RL_esc {
+            layers = <CMD>
+            key-positions = <35 56 31>;
+              bindings = <&kp LG(E)>;
+        };
     };
 	
 	
