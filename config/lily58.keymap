@@ -150,7 +150,7 @@ nump_layer {
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS  &trans                         &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp RALT  &kp N4  &kp N5    &kp N6    &kp RET   &trans                         &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
 &kp RET   &kp N1  &kp N2    &kp N3    &kp RET   &trans    &kp LSHFT  &kp LSHFT &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
-                            &kp DOT   &mo CMD   &tog NUMP &kp SPACE  &kp SPACE &tog NUMP  &mo CMD   &kp DOT
+                            &kp N0    &kp DOT   &tog NUMP &kp SPACE  &kp SPACE &kp N0   &kp DOT &tog NUMP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
