@@ -35,32 +35,32 @@
 		
 		
     };
-    combos {
-        compatible = "zmk,combos";
-        WIN_EL {
-            layers = <CMD>;
-            key-positions = <24 28 >;
-              bindings = <&kp LG(E)>;
-        };
-		
-		WIN_ER {
-            layers = <CMD>;
-            key-positions = <35 31>;
-              bindings = <&kp LG(E)>;
-        };
-		
-		WIN_LL {
-            layers = <CMD>;
-            key-positions = <24 27 >;
-              bindings = <&kp LG(L)>;
-        };
-		
-		WIN_RL {
-            layers = <CMD>;
-            key-positions = <35 32>;
-              bindings = <&kp LG(L)>;
-        };
-    };
+ //   combos {
+ //       compatible = "zmk,combos";
+ //       WIN_EL {
+ //           layers = <CMD>;
+ //           key-positions = <24 28 >;
+ //             bindings = <&kp LG(E)>;
+ //       };
+//
+//		WIN_ER {
+//            layers = <CMD>;
+//            key-positions = <35 31>;
+//              bindings = <&kp LG(E)>;
+//        };
+//		
+//		WIN_LL {
+//            layers = <CMD>;
+//            key-positions = <24 27 >;
+//              bindings = <&kp LG(L)>;
+//        };
+//		
+//		WIN_RL {
+//           layers = <CMD>;
+//            key-positions = <35 32>;
+//              bindings = <&kp LG(L)>;
+//       };
+//    };
 	
 	
 	//CMD +  SENC
@@ -97,15 +97,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  0  |  9  |  8   |  7   |  6   |                   |  6   |  7    |  8    |  9   |   0   |  ESC  |
 // |  LCTRL|  J  |  M  |  B   |  '   |  TAB |                   |  TAB |  '    |  B    |  M   |   J   | LCTRL |
-// |  RALT |  V  |  C  |  L   |  Z   |  Q   |                   |  Q   |  Z    |  L    |  C   |   V   | RALT  |
+// |  COMMA |  V  |  C  |  L   |  Z   |  Q   |                   |  Q   |  Z    |  L    |  C   |   V   | COMMA|
 // | KP_DOT|  X  |  G  |  K   |  LWIN| RWIN |  SHIFT |  | SHIFT | RWIN |  LWIN |  K    |  G   |   X   | KP_DOT|
 //                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON| NUM   | SIM   |
             bindings = <
 &kp ESC      &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6     &kp N7   &kp N8  &kp N9  &kp N0 &kp ESC
 &kp LCTRL    &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp TAB    &kp SQT  &kp B   &kp M   &kp J  &kp LCTRL
-&kp RALT     &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp RALT
-&kp KP_DOT   &kp X  &kp G  &kp K    &kp LGUI &kp RGUI   &kp LSHFT    &kp LSHFT &kp RGUI   &kp LGUI &kp K   &kp G   &kp X  &kp KP_DOT
-                        &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp SPACE &mo SECOND &mo CMD  &mo SYM
+&kp COMMA    &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp COMMA 
+&kp KP_DOT   &kp X  &kp G  &kp K    &trans   &trans &kp LSHFT     &kp LSHFT    &trans     &trans  &kp K   &kp G   &kp X  &kp KP_DOT
+                        &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp SPACE    &mo SECOND &mo CMD  &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -115,13 +115,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  | F5  |  F4 |  F3  |  F2  |  F1  |                   |  F1    |  F2    |  F3  |  F4 | F5   | ESC   |
 // |  LCTRL| PGUP|PAUSE|  END | HOME |  ESC |                   |  ESC   |  HOME  |  END |PAUSE| PGUP | LCTRL |
-// |  LGUI | PGDN| C_UP| LALT | RCTRL|  INS |                   |  INS   |  RCTRL |  LALT|C_UP | PGDN | RALT  |
+// |  RALT | PGDN| C_UP| LALT | RCTRL|  INS |                   |  INS   |  RCTRL |  LALT|C_UP | PGDN | RALT  |
 // | RET   |C_LT | C_DN| C_RT |BACKSP|  DEL |  SHIFT |  | SHIFT |  DEL   |  BACKSP|  C_LT|C_DN | C_RT | RET   |
 //                     | SIM  | NUM  | SECON|  SPACE |  | SPACE | SECON  | NUM    | SIM  |
             bindings = <
 &kp ESC   &kp F5     &kp F4           &kp F3    &kp F2    &kp F1                                &kp F1    &kp F2     &kp F3    &kp F4           &kp F5    &kp ESC
 &kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                               &kp ESC   &kp HOME   &kp END   &kp PAUSE_BREAK  &kp PG_UP &kp LCTRL
-&kp LGUI  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                               &kp INS   &kp RCTRL  &kp LALT  &kp UP           &kp PG_DN &kp LGUI
+&kp RALT  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                               &kp INS   &kp RCTRL  &kp LALT  &kp UP           &kp PG_DN &kp RALT
 &kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL   &kp LSHFT         &kp LSHFT &kp DEL   &kp BSPC   &kp LEFT  &kp DOWN         &kp RIGHT  &kp RET
                                       &mo SYM   &mo CMD   &tog NUMP &kp SPACE         &kp SPACE &tog NUMP &mo CMD    &mo SYM
             >;
@@ -141,7 +141,7 @@
 &kp LCTRL    &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS  &kp QMARK                              &kp QMARK &kp AMPS &kp ASTRK &kp COLON &kp SEMI  &kp LCTRL
 &kp COMMA    &kp UNDER  &kp AT     &kp MINUS &kp EXCL  &kp SLASH                              &kp SLASH &kp EXCL &kp MINUS &kp AT    &kp UNDER &kp COMMA
 &kp KP_DOT   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT    &kp DQT    &kp LSHFT         &kp LSHFT &kp DQT   &kp LT   &kp LPAR  &kp LBKT  &kp LBRC  &kp KP_DOT
-                                &mo SYM   &mo CMD   &kp CAPS   &kp SPACE         &kp SPACE &kp CAPS  &mo CMD  &mo SYM
+                                &mo SYM   &mo CMD   &kp CAPS      &kp SPACE         &kp SPACE &kp CAPS  &mo CMD  &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -167,11 +167,11 @@
 			
 nump_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  |     |  /  |  *   |  -   |      |                   |BTCLR | BT1   | BT2   |  BT3 |  BT4  |  BT5    |
-// |  CTRL |  7  |  8  |  9   |  +   |      |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-// |  RALT |  4  |  5  |  6   |  RET |      |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// |  RET  |  1  |  2  |  3   |  RET |      |  SHIFT |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | SIM  | NUM  | SECON|  SPACE |  | RALTER | RAISE| BSPC  | GUI   |
+// |  ESC  |     |  /  |  *   |  -   |      |                   |      | /     | *     |  -   |       |  ESC |
+// |  CTRL |  7  |  8  |  9   |  +   |      |                   |  7   |  8    |  9    |  +   |   P   | CTRL |
+// |  RALT |  4  |  5  |  6   |  RET |      |                   |  4   |  5    |  6    |  RET |   ;   |RALT  |
+// |  RET  |  1  |  2  |  3   |  RET |      |  BT-M  |  |  BT-L |  1   |  2    |  3    |  RET |   /   | RET  |
+//                     | 0    | DOT  | NUMP |  SPACE |  | SPACE | 0     DOT  | NUM  |
             bindings = <
 &kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog NUMP                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUMP  &kp ESC 
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
@@ -195,7 +195,7 @@ nump_layer {
             bindings = <
   &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
   &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
-  &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
+  &kp LGUI   &trans         &trans       &kp L         &kp E        &trans                                  &trans     &kp E        &kp L        &trans       &trans       &kp LGUI
   &to QWERTY &trans         &trans       &trans        &trans       &trans       &tog BLUET      &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
                                          &mo SYM       &mo CMD      &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM
             >;
