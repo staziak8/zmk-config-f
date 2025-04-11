@@ -157,7 +157,7 @@ nump_layer {
 &kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog NUMP                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUMP  &kp ESC 
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp RALT  &kp N4  &kp N5    &kp N6    &kp RET      &trans                          &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans     &tog BLUET &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
+&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans     &tog NUMP &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
                             &kp N0    &kp KP_DOT   &mo SECOND &tog BLUET &kp SPACE  &kp N0   &kp KP_DOT &tog NUMP
             >;
 
@@ -177,7 +177,7 @@ nump_layer {
   &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
   &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
   &kp LGUI   &trans         &trans       &kp L         &kp E        &trans                                  &trans     &kp E        &kp L        &trans       &trans       &kp LGUI
-  &to QWERTY &trans         &trans       &trans        &trans       &trans       &tog NUMP      &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
+  &to QWERTY &trans         &trans       &trans        &trans       &trans       &tog BLUET      &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
                                          &mo SYM       &mo CMD      &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM
             >;
 
