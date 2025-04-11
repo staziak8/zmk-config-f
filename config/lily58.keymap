@@ -104,7 +104,7 @@
 &kp LCTRL &kp PG_UP  &kp PAUSE_BREAK  &kp END   &kp HOME  &kp ESC                               &kp ESC   &kp HOME   &kp END   &kp PAUSE_BREAK  &kp PG_UP &kp LCTRL
 &kp RALT  &kp PG_DN  &kp UP           &kp LALT  &kp RCTRL &kp INS                               &kp INS   &kp RCTRL  &kp LALT  &kp UP           &kp PG_DN &kp RALT
 &kp RET   &kp LEFT   &kp DOWN         &kp RIGHT &kp BSPC  &kp DEL   &kp LSHFT         &kp LSHFT &kp DEL   &kp BSPC   &kp LEFT  &kp DOWN         &kp RIGHT  &kp RET
-                                      &mo SYM   &mo CMD   &tog NUMP &kp SPACE         &kp SPACE &tog NUMP &mo CMD    &mo SYM
+                                      &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp SPACE &tog NUMP &mo CMD    &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -158,7 +158,7 @@ nump_layer {
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp RALT  &kp N4  &kp N5    &kp N6    &kp RET      &trans                          &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
 &kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans    &tog BLUET &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
-                            &kp N0    &kp KP_DOT   &tog NUMP &tog BLUET &kp SPACE  &kp N0   &kp KP_DOT &tog NUMP
+                            &kp N0    &kp KP_DOT   &mo SECOND &tog BLUET &kp SPACE  &kp N0   &kp KP_DOT &tog NUMP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
