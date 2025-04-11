@@ -139,7 +139,7 @@
 &kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp ESC
 &kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                &kp TAB    &kp PLUS  &kp EQUAL &kp DLLR  &kp HASH  &kp LCTRL
 &kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                               &kp BSLH   &kp PRCNT &kp PIPE  &kp TILDE &kp CARET &kp RALT
-&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
+&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &tog NUMP         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
                                 &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp SPACE &mo SECOND &mo CMD   &mo SYM
             >;
 
