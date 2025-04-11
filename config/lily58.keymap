@@ -86,7 +86,7 @@
 &kp ESC      &kp N0 &kp N9 &kp N8   &kp N7   &kp N6                            &kp N6     &kp N7   &kp N8  &kp N9  &kp N0 &kp ESC
 &kp LCTRL    &kp J  &kp M  &kp B    &kp SQT  &kp TAB                           &kp TAB    &kp SQT  &kp B   &kp M   &kp J  &kp LCTRL
 &kp COMMA    &kp V  &kp C  &kp L    &kp Z    &kp Q                             &kp Q      &kp Z    &kp L   &kp C   &kp V  &kp COMMA 
-&kp KP_DOT   &kp X  &kp G  &kp K    &trans   &trans &kp LSHFT     &kp LSHFT    &trans     &trans  &kp K   &kp G   &kp X  &kp KP_DOT
+&kp DOT   &kp X  &kp G  &kp K    &trans   &trans &kp LSHFT     &kp LSHFT    &trans     &trans  &kp K   &kp G   &kp X  &kp KP_DOT
                         &mo SYM  &mo CMD  &mo SECOND &kp SPACE    &kp SPACE    &mo SECOND &mo CMD  &mo SYM
             >;
 
@@ -122,7 +122,7 @@
 &kp ESC      &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp ESC
 &kp LCTRL    &kp SEMI   &kp COLON  &kp ASTRK &kp AMPS  &kp QMARK                              &kp QMARK &kp AMPS &kp ASTRK &kp COLON &kp SEMI  &kp LCTRL
 &kp COMMA    &kp UNDER  &kp AT     &kp MINUS &kp EXCL  &kp SLASH                              &kp SLASH &kp EXCL &kp MINUS &kp AT    &kp UNDER &kp COMMA
-&kp KP_DOT   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT    &kp DQT    &kp LSHFT         &kp LSHFT &kp DQT   &kp LT   &kp LPAR  &kp LBKT  &kp LBRC  &kp KP_DOT
+&kp DOT   &kp LBRC   &kp LBKT   &kp LPAR  &kp LT    &kp DQT    &kp LSHFT         &kp LSHFT &kp DQT   &kp LT   &kp LPAR  &kp LBKT  &kp LBRC  &kp KP_DOT
                                 &mo SYM   &mo CMD   &kp CAPS      &kp SPACE         &kp SPACE &kp CAPS  &mo CMD  &mo SYM
             >;
 
