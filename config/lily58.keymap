@@ -183,7 +183,7 @@ nump_layer {
 &kp LGUI    &kp MINUS  &kp ASTRK &kp SLASH     &kp N0    &bt BT_SEL 0                                                           &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUML  &kp ESC 
 &kp E       &kp PLUS   &kp N9    &kp N8        &kp N7    &bt BT_SEL 1                                                           &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp L       &kp RET    &kp N6    &kp N5        &kp N4    &bt BT_SEL 2                                                           &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&bt BT_CLR  &kp RET    &kp N3    &kp N1        &kp N1    &bt BT_SEL 3  &bt BT_SEL 4                                  &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
+&bt BT_CLR  &kp RET    &kp N3    &kp N2        &kp N1    &bt BT_SEL 3  &bt BT_SEL 4                                  &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
                                  &kp KP_DOT    &kp N0    &mo SECOND    &tog BLUET                                    &kp SPACE  &kp N0   &kp KP_DOT &tog NUML
 
 
