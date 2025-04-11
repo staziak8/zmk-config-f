@@ -157,8 +157,8 @@
 &kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp ESC
 &kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                &kp TAB    &kp PLUS  &kp EQUAL &kp DLLR  &kp HASH  &kp LCTRL
 &kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                               &kp BSLH   &kp PRCNT &kp PIPE  &kp TILDE &kp CARET &kp RALT
-&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &tog_on NUML         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
-                                &mo SYM   &mo CMD   &mo SECOND &tog_on NUML         &kp SPACE &mo SECOND &mo CMD   &mo SYM
+&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &tog_on 5         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
+                                &mo SYM   &mo CMD   &mo SECOND &tog_on 5         &kp SPACE &mo SECOND &mo CMD   &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -172,10 +172,10 @@ nump_layer {
 // |  RET  |  1  |  2  |  3   |  RET |      |  BT-M  |  |  BT-L |  1   |  2    |  3    |  RET |   /   | RET  |
 //                     | 0    | DOT  | NUML |  SPACE |  | SPACE | 0     DOT  | NUM  |
             bindings = <
-&kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog_off NUML                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUML  &kp ESC 
+&kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog_off 5                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUML  &kp ESC 
 &kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
 &kp RALT  &kp N4  &kp N5    &kp N6    &kp RET      &trans                          &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans     &tog_off NUML &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
+&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans     &tog_off 5 &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
                             &kp N0    &kp KP_DOT   &mo SECOND &tog BLUET &kp SPACE  &kp N0   &kp KP_DOT &tog NUML
             >;
 
