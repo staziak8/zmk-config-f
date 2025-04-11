@@ -45,38 +45,9 @@
 		
 		
     };
- //   combos {
- //       compatible = "zmk,combos";
- //       WIN_EL {
- //           layers = <CMD>;
- //           key-positions = <24 28 >;
- //             bindings = <&kp LG(E)>;
- //       };
-//
-//		WIN_ER {
-//            layers = <CMD>;
-//            key-positions = <35 31>;
-//              bindings = <&kp LG(E)>;
-//        };
-//		
-//		WIN_LL {
-//            layers = <CMD>;
-//            key-positions = <24 27 >;
-//              bindings = <&kp LG(L)>;
-//        };
-//		
-//		WIN_RL {
-//           layers = <CMD>;
-//            key-positions = <35 32>;
-//              bindings = <&kp LG(L)>;
-//       };
-//    };
-	
-	
-	//CMD +  SENC
-	
 
-
+	
+//CMD +  SENC
 //Sym + CMD
 	
 
@@ -216,3 +187,4 @@ nump_layer {
 		
 		
     };
+};
