@@ -140,7 +140,7 @@
 &kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                &kp TAB    &kp PLUS  &kp EQUAL &kp DLLR  &kp HASH  &kp LCTRL
 &kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                               &kp BSLH   &kp PRCNT &kp PIPE  &kp TILDE &kp CARET &kp RALT
 &kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &tog NUML         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
-                                &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp SPACE &mo SECOND &mo CMD   &mo SYM
+                                &mo SYM   &mo CMD   &mo SECOND &tog NUML         &kp SPACE &mo SECOND &mo CMD   &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
