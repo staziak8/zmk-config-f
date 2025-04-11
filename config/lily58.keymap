@@ -45,24 +45,7 @@
 		
 		
     };
-	
-	    behaviors {
-        tog_on: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-             toggle-mode = "on";
-        };
-		
-		
-		tog_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            toggle-mode = "off";
-        };
-		
-		
-		
-    };
+
 
 	
 //CMD +  SENC
@@ -157,8 +140,8 @@
 &kp ESC   &kp F10    &kp F9     &kp F8    &kp F7    &kp F6                                 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp ESC
 &kp LCTRL &kp HASH   &kp DLLR   &kp EQUAL &kp PLUS  &kp TAB                                &kp TAB    &kp PLUS  &kp EQUAL &kp DLLR  &kp HASH  &kp LCTRL
 &kp RALT  &kp CARET  &kp TILDE  &kp PIPE  &kp PRCNT &kp BSLH                               &kp BSLH   &kp PRCNT &kp PIPE  &kp TILDE &kp CARET &kp RALT
-&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &tog_on 5         &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
-                                &mo SYM   &mo CMD   &mo SECOND &tog_on 5         &kp SPACE &mo SECOND &mo CMD   &mo SYM
+&kp RET   &kp RBRC   &kp RBKT   &kp RPAR  &kp GT    &kp GRAVE  &kp LSHFT          &kp LSHFT &kp GRAVE  &kp GT    &kp RPAR  &kp RBKT  &kp RBRC  &kp RET
+                                &mo SYM   &mo CMD   &mo SECOND &kp SPACE         &kp SPACE &mo SECOND &mo CMD   &mo SYM
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -172,11 +155,15 @@ nump_layer {
 // |  RET  |  1  |  2  |  3   |  RET |      |  BT-M  |  |  BT-L |  1   |  2    |  3    |  RET |   /   | RET  |
 //                     | 0    | DOT  | NUML |  SPACE |  | SPACE | 0     DOT  | NUM  |
             bindings = <
-&kp ESC   &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &tog_off 5                       &kp N0   &kp SLASH   &kp ASTRK  &kp MINUS &tog NUML  &kp ESC 
-&kp LCTRL &kp N7  &kp N8    &kp N9    &kp PLUS     &trans                          &kp N7   &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
-&kp RALT  &kp N4  &kp N5    &kp N6    &kp RET      &trans                          &kp N4   &kp N5      &kp N6     &kp RET   &trans     &kp RALT
-&kp RET   &kp N1  &kp N2    &kp N3    &kp RET      &trans     &tog_off 5 &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
-                            &kp N0    &kp KP_DOT   &mo SECOND &tog BLUET &kp SPACE  &kp N0   &kp KP_DOT &tog NUML
+					
+							
+&trans     &trans         &trans       &trans        &trans       &trans                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
+&trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
+&kp LGUI   &trans         &trans       &kp L         &kp E        &trans                                  &trans     &kp E        &kp L        &trans       &trans       &kp LGUI
+&trans     &trans         &trans       &trans        &trans       &trans       &trans          &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
+                                         &mo SYM       &mo CMD    &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM							
+							
+							
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -192,11 +179,12 @@ nump_layer {
 // |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
 //                     | SIM  | NUM  | SECON|  BLUET |  | BLUET | SECON| NUM   | SIM   |
             bindings = <
-  &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 
-  &trans     &trans         &trans       &trans        &trans       &trans                                  &trans     &trans       &trans       &trans       &trans       &trans
-  &kp LGUI   &trans         &trans       &kp L         &kp E        &trans                                  &trans     &kp E        &kp L        &trans       &trans       &kp LGUI
-  &to QWERTY &trans         &trans       &trans        &trans       &trans       &tog BLUET      &tog BLUET &trans     &trans       &trans       &trans       &trans       &to QWERTY
-                                         &mo SYM       &mo CMD      &mo SECOND   &tog BLUET      &tog BLUET &mo SECOND &mo CMD      &mo SYM
+			
+&kp LGUI    &kp N0  &kp SLASH &kp ASTRK &kp MINUS    &bt BT_SEL 0                                        &kp N0       &kp SLASH   &kp ASTRK  &kp MINUS &tog NUML  &kp ESC 
+&kp E       &kp N7  &kp N8    &kp N9    &kp PLUS     &bt BT_SEL 1                                        &kp N7       &kp N8      &kp N9     &kp PLUS  &trans     &kp LCTRL
+&kp L       &kp N4  &kp N5    &kp N6    &kp RET      &bt BT_SEL 2                                        &kp N4       &kp N5      &kp N6     &kp RET   &trans     &kp RALT
+&bt BT_CLR  &kp N1  &kp N2    &kp N3    &kp RET      &bt BT_SEL 3   &bt BT_SEL 4                         &tog BLUET &kp N1   &kp N2      &kp N3     &kp RET   &trans     &kp RET
+                              &kp N0    &kp KP_DOT   &mo SECOND     &tog BLUET              &kp SPACE    &kp N0   &kp KP_DOT &tog NUML
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
